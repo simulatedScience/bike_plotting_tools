@@ -244,5 +244,18 @@ def plot_gear_scatter(
     return fig, ax
 
 if __name__ == "__main__":
+    # Example: new bikes
+    custom_bikes = [
+        BikeSpec(
+            name="Custom 1x11",
+            color="#ff00ff",
+            chainrings=[32],
+            cassette=CASSETTES["11s 11-42 SLX (CS-M7000)"],
+            tire="27.5\" x 2.25\"",
+        ),
+    ]
+    # input which bikes will be plotted; can be a custom list or the default
     plot_gear_scatter(DEFAULT_BIKES)
-    plt.savefig("gear_ratios.png", dpi=150)
+    # specify the name the plot will be saved as
+    image_name: str = "gear_ratios.png"
+    plt.savefig(image_name, dpi=150)
